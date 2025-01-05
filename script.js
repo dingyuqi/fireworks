@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 用于存储点击时间戳
   let clickTimes = [];
   // 设置触发彩蛋的点击次数和时间间隔
-  const triggerTimeLimit = 2000; // 时间限制为 m 秒
+  const triggerTimeLimit = 1000; // 时间限制为 m 秒
   const requiredClicks = 5; // 需要点击 n 次
   // 获取彩蛋元素
   const easterEgg = document.getElementById('easterEgg');
