@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 用于存储点击时间戳
   let clickTimes = [];
   // 设置触发彩蛋的点击次数和时间间隔
-  const triggerTimeLimit = 1000; // 时间限制为 m 秒
-  const requiredClicks = 5; // 需要点击 n 次
+  const triggerTimeLimit = 1000; // 时间限制(秒)
+  const requiredClicks = 5; // 需要点击次数
   // 获取彩蛋元素
   const easterEgg = document.getElementById('easterEgg');
 
@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 记录点击时间
     const currentTime = new Date().getTime(); // 获取当前时间戳
     clickTimes.push(currentTime);
-    // 如果短时间内连续点击了5次
-    if (clickTimes.length >= 5 && currentTime - clickTimes[0] <= 2000) {
+    // 如果短时间内连续点击了 requiredClicks 次
+    if (clickTimes.length >= requiredClicks && currentTime - clickTimes[0] <= triggerTimeLimit) {
       // 显示彩蛋
       easterEgg.classList.add('visible');
       
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 超过2秒后清空点击记录
-    if (currentTime - clickTimes[0] > 2000) {
+    if (currentTime - clickTimes[0] > triggerTimeLimit) {
       clickTimes.shift();
     }
     
