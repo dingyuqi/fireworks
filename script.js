@@ -41,7 +41,7 @@ function setupFireworks() {
         'static/explosion0.mp3',
         'static/explosion1.mp3',
         'static/explosion2.mp3'
-      ], volume: volume: {
+      ], volume: {
       min: 2,
       max: 4
     } }})
