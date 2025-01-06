@@ -37,6 +37,11 @@ function setupFireworks() {
   }
 
   const fireworks = new Fireworks.default(container);
+  fireworks..updateOptions({sound:{enabled: true, files: [
+        'explosion0.mp3',
+        'explosion1.mp3',
+        'explosion2.mp3'
+      ],volume:6 }})
   const confirmButton = document.getElementById('confirmButton');
 
   // 点击页面触发烟花和文字
@@ -124,8 +129,6 @@ function updateTextList(input) {
 let currentTextIndex = 0;
 let textList = [];
 function createText(container, x, y) {
-  console.log(textList)
-  console.log(currentTextIndex)
   const text = textList[currentTextIndex] || '蛇年快乐';
   const message = document.createElement('div');
   message.className = 'text';
