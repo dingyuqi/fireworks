@@ -38,9 +38,9 @@ function setupFireworks() {
 
   const fireworks = new Fireworks.default(container);
   fireworks.updateOptions({sound:{enabled: true, files: [
-        'explosion0.mp3',
-        'explosion1.mp3',
-        'explosion2.mp3'
+        'static/explosion0.mp3',
+        'static/explosion1.mp3',
+        'static/explosion2.mp3'
       ],volume:6 }})
   const confirmButton = document.getElementById('confirmButton');
 
