@@ -14,6 +14,11 @@
     box-shadow: 0 0 8px 2px rgba(173, 216, 230, 0.7);
 }
 
+#textInput::placeholder {
+    color: #353535; /* 你可以修改成任何你喜欢的颜色 */
+    font-style: italic; /* 你也可以给它添加一些样式，例如斜体 */
+  }
+
 
 /* 引入自定义字体 */
 @font-face {
