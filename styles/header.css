@@ -1,0 +1,31 @@
+#header {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+#site-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    /* 增大字体 */
+    color: white;
+    margin-bottom: 15px;
+    /* 增大标题与输入框的间距 */
+    font-weight: bold;
+    /* 设置加粗字体 */
+}
+
+#site-title .logo {
+    width: 20px;
+    /* 调整图标大小 */
+    height: 20px;
+    margin-right: 15px;
+    /* 图标与标题之间的间距 */
+    margin-left: 15px;
+    /* 图标与标题之间的间距 */
+}

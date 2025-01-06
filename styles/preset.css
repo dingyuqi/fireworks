@@ -1,0 +1,27 @@
+#presetContainer {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    /* 预置字符串之间的间距 */
+    justify-content: center;
+}
+
+.presetText {
+    padding: 2px 5px;
+    font-size: 12px;
+    color: white;
+    background-color: #6c757d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.presetText:hover {
+    background-color: #5a6268;
+    transform: scale(1.1);
+}
+
+.presetText:active {
+    background-color: #343a40;
+    transform: scale(0.95);
+}

@@ -1,0 +1,49 @@
+#textInput {
+    padding: 5px;
+    font-size: 12px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #2b2b2b;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#textInput:focus {
+    border-color: #ADD8E6;
+    box-shadow: 0 0 8px 2px rgba(173, 216, 230, 0.7);
+}
+
+
+/* 引入自定义字体 */
+@font-face {
+    font-family: 'MyCustomFont';
+    /* 字体名称，可以随意命名 */
+    src: url('../static/font.ttf') format('truetype');
+    /* 字体文件路径 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.text {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    animation: fall 3s linear forwards;
+    color: white;
+    /* 默认颜色为白色，后续可以动态更改 */
+    font-family: 'MyCustomFont';
+    /* 应用自定义字体 */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}

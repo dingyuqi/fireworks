@@ -1,0 +1,34 @@
+#confirmButton {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: #6c757d;
+    /* 默认灰色 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#confirmButton:hover {
+    background-color: #5a6268;
+    /* 鼠标悬停时更深的灰色 */
+    transform: scale(1.05);
+    /* 鼠标悬停时微缩放 */
+}
+
+#confirmButton:active {
+    background-color: #343a40;
+    /* 按下时的深灰色 */
+    transform: scale(0.95);
+    /* 按下时微缩放 */
+}
+
+#confirmButton:focus {
+    outline: none;
+    /* 移除默认聚焦边框 */
+    box-shadow: 0 0 10px rgba(108, 117, 125, 0.8);
+    /* 灰色外发光效果 */
+}

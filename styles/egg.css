@@ -1,0 +1,38 @@
+/* 初始状态下彩蛋不可见 */
+.easter-egg {
+    position: absolute;
+    top: 50%;
+    /* 居中 */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    /* 初始状态为透明且缩小 */
+    font-size: 16px;
+    color: white;
+    opacity: 0;
+    /* 初始不可见 */
+    pointer-events: none;
+    /* 禁止交互 */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-family: "ZCOOL QingKe HuangYou", serif;
+}
+
+/* 触发时的样式 */
+.easter-egg.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+    /* 允许交互 */
+}
+
+/* 动画结束后恢复初始状态 */
+@keyframes hideEgg {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        /* 让其缩小并消失 */
+    }
+}
