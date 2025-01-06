@@ -116,13 +116,16 @@ function handleConfirmButton(container, fireworks) {
 
 function updateTextList(input) {
   textList = input.trim().split(/\s+/).filter(Boolean);
+  currentTextIndex = 0;
 }
 
 
 /** 创建文字 */
 let currentTextIndex = 0;
-const textList = [];
+let textList = [];
 function createText(container, x, y) {
+  console.log(textList)
+  console.log(currentTextIndex)
   const text = textList[currentTextIndex] || '蛇年快乐';
   const message = document.createElement('div');
   message.className = 'text';
