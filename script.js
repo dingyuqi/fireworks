@@ -43,8 +43,8 @@ function setupFireworks() {
         'static/explosion1.mp3',
         'static/explosion2.mp3'
       ], volume: {
-      min: 4,
-      max: 8
+      min: 20,
+      max: 40
     } }})
   const confirmButton = document.getElementById('confirmButton');
 
