@@ -3,6 +3,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   // 获取容器元素
   const container = document.querySelector('.fireworks');
+  const music = document.getElementById('backgroundMusic');
+  // 检测音乐是否可以自动播放
+  const playMusic = () => {
+    music.play().catch((error) => {
+      console.log('自动播放被阻止，将等待用户交互后播放。');
+    });
+  };
+  // 如果自动播放失败，则通过第一次点击触发播放
+  document.addEventListener('click', () => {
+    if (music.paused) {
+      music.play();
+    }
+  }, { once: true }); // 只绑定一次事件
+
+  // 页面加载时尝试播放背景音乐
+  playMusic();
 
   // 确保 container 元素存在
   if (!container) {
@@ -44,6 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // 更新索引，循环使用文字列表中的元素
     currentTextIndex = (currentTextIndex + 1) % textList.length;
   }
+  // 添加涟漪特效
+  function createRipple(x, y) {
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple';
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    container.appendChild(ripple);
+
+    // 动画结束后移除涟漪
+    ripple.addEventListener('animationend', () => {
+      ripple.remove();
+    });
+  }
 
   /*
   ===以下是监听部分===
@@ -52,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
   container.addEventListener('click', (e) => {
     const x = e.clientX;
     const y = e.clientY;
+    // 创建涟漪特效
+    createRipple(x, y);
+
     // 创建文字掉落
     createText(x, y);
     // 记录点击时间
@@ -61,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (clickTimes.length >= requiredClicks && currentTime - clickTimes[0] <= triggerTimeLimit) {
       // 显示彩蛋
       easterEgg.classList.add('visible');
-      
+
       // 1秒后隐藏彩蛋
       setTimeout(() => {
         easterEgg.classList.remove('visible');
@@ -74,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTime - clickTimes[0] > triggerTimeLimit) {
       clickTimes.shift();
     }
-    
+
     // 启动烟花效果
     fireworks.launch(1);
 

@@ -147,3 +147,30 @@ html::after {
   text-align: center;
   z-index: 20;
 }
+
+#audio {
+  display: none;
+}
+
+/* 涟漪特效 */
+.ripple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5); /* 白色半透明 */
+  border-radius: 50%;
+  pointer-events: none; /* 不影响鼠标事件 */
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple-effect 1s ease-out;
+}
+
+@keyframes ripple-effect {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2); /* 扩散到10倍大小 */
+    opacity: 0;
+  }
+}
