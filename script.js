@@ -37,7 +37,7 @@ function setupFireworks() {
   }
 
   const fireworks = new Fireworks.default(container);
-  fireworks..updateOptions({sound:{enabled: true, files: [
+  fireworks.updateOptions({sound:{enabled: true, files: [
         'explosion0.mp3',
         'explosion1.mp3',
         'explosion2.mp3'
