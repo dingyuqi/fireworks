@@ -7,10 +7,12 @@
 }
 
 .presetText {
-    padding: 2px 5px;
+    padding: 3px 8px;
     font-size: 12px;
     color: white;
     background-color: #6c757d;
+    white-space: nowrap;   /* 防止换行 */
+    display: inline-block; /* 确保它们在一行内显示 */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
