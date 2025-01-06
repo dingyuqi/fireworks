@@ -76,8 +76,6 @@ function setupEasterEgg() {
 /** 设置输入框和文字预置逻辑 */
 function setupTextInput() {
   const textInput = document.getElementById('textInput');
-  const container = document.querySelector('.fireworks');
-
   textInput.addEventListener('input', () => {
     updateTextList(textInput.value);
   });
@@ -123,6 +121,7 @@ function updateTextList(input) {
 
 /** 创建文字 */
 let currentTextIndex = 0;
+const textList = [];
 function createText(container, x, y) {
   const text = textList[currentTextIndex] || '蛇年快乐';
   const message = document.createElement('div');
