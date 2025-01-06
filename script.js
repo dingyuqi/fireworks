@@ -24,7 +24,7 @@ function setupBackgroundMusic() {
   document.addEventListener('click', () => {
     if (music.paused) {
       music.play();
-      music.volume = 0.1;
+      music.volume = 0.08;
     }
   }, { once: true });
 }
@@ -43,8 +43,8 @@ function setupFireworks() {
         'static/explosion1.mp3',
         'static/explosion2.mp3'
       ], volume: {
-      min: 2,
-      max: 4
+      min: 4,
+      max: 8
     } }})
   const confirmButton = document.getElementById('confirmButton');
 
