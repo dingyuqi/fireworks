@@ -24,7 +24,7 @@ function setupBackgroundMusic() {
   document.addEventListener('click', () => {
     if (music.paused) {
       music.play();
-      music.volume = 0.2;
+      music.volume = 0.1;
     }
   }, { once: true });
 }
