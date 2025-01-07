@@ -1,4 +1,6 @@
 #presetContainer {
+    opacity: 0;
+    visibility: hidden;
     display: flex;
     gap: 5px;
     /* 预置字符串之间的间距 */
