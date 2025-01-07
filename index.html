@@ -24,9 +24,17 @@
       <span>Fireworks!</span>
       <img src="static/favicon.ico" alt="Logo" class="logo">
     </div>
-    <input type="text" id="textInput" placeholder="输入祝福语...空格可以分词">
-    <button id="confirmButton">发射</button>
-
+    <input class="c-checkbox" type="checkbox" id="checkbox">
+    <div class="c-formContainer">
+      <form class="c-form" action="">
+        <input id="textInput" class="c-form__input" placeholder="空格可以分词"
+          pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+        <label class="c-form__buttonLabel" for="checkbox">
+          <button class="c-form__button" type="button" id="button">发射</button>
+        </label>
+        <label class="c-form__toggle" for="checkbox" data-title="输入祝福语"></label>
+      </form>
+    </div>
     <div id="presetContainer">
       <!-- 示例预置字符串 -->
       <span class="presetText">新年快乐</span>
@@ -34,7 +42,6 @@
       <span class="presetText">顺风顺水</span>
       <span class="presetText">财源滚滚</span>
     </div>
-
   </div>
   <div id="container" class="fireworks"></div>
   <div id="easterEgg" class="easter-egg">🎉 恭喜你触发了彩蛋! 🎉</div>

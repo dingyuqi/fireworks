@@ -38,15 +38,19 @@ function setupFireworks() {
   }
 
   const fireworks = new Fireworks.default(container);
-  fireworks.updateOptions({sound:{enabled: true, files: [
+  fireworks.updateOptions({
+    sound: {
+      enabled: true, files: [
         'static/explosion0.mp3',
         'static/explosion1.mp3',
         'static/explosion2.mp3'
       ], volume: {
-      min: 100,
-      max: 140
-    } }})
-  const confirmButton = document.getElementById('confirmButton');
+        min: 100,
+        max: 140
+      }
+    }
+  })
+  const confirmButton =document.querySelector('label[for="checkbox"]');
 
   // 点击页面触发烟花和文字
   container.addEventListener('click', (e) => {

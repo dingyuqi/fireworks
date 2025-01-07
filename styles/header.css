@@ -1,11 +1,19 @@
 #header {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    justify-content: space-between;
+    /* 均匀分布 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    height: auto;
+    /* 自适应高度 */
+    max-height: 300px;
+    /* 限制最大高度 */
+    padding: 20px 0;
+    /* 给顶部和底部添加间距 */
 }
+
 
 #site-title {
     display: flex;
@@ -14,7 +22,7 @@
     font-size: 24px;
     /* 增大字体 */
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     /* 增大标题与输入框的间距 */
     font-weight: bold;
     /* 设置加粗字体 */
@@ -28,4 +36,137 @@
     /* 图标与标题之间的间距 */
     margin-left: 15px;
     /* 图标与标题之间的间距 */
+}
+
+.c-checkbox {
+    visibility: hidden;
+}
+
+.c-checkbox:checked + .c-formContainer {
+    .c-form {
+        width: 18.75em;
+    }
+
+    .c-form__toggle {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    .c-form__input,
+    .c-form__buttonLabel {
+        transition: 0.2s 0.1s;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.c-formContainer {
+    position: absolute;
+    margin-top: 35px;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+}
+
+.c-form,
+.c-form__toggle {
+    width: 10em;
+    height: 1.8em;
+    position: absolute;
+    border-radius: 3.125em;
+    background-color: #ffffff;
+    transition: 0.2s;
+}
+
+.c-form {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.3125em;
+    box-sizing: border-box;
+    box-shadow: 0 0.0625em 0.15625em rgba(#000000, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.c-form__toggle {
+    color: #ff7b73;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-form__toggle::before {
+    font-size: 0.8em;
+    content: attr(data-title);
+}
+
+.c-form__input,
+.c-form__button {
+    font: inherit;
+    border: 0;
+    outline: 0;
+    border-radius: 2.5em;
+    box-sizing: border-box;
+}
+
+.c-form__input,
+.c-form__buttonLabel {
+    font-size: 0.8em;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+    transition: 0s;
+}
+
+.c-form__input {
+    color: #ffcccc;
+    height: 100%;
+    width: 100%;
+    padding: 0 0.357em;
+}
+
+.c-form__input::placeholder {
+    color: currentColor;
+}
+
+.c-form__input:required:valid {
+    color: #ff7b73;
+
+    + .c-form__buttonLabel {
+        color: #ffffff;
+
+        &::before {
+            pointer-events: initial;
+        }
+    }
+}
+
+.c-form__buttonLabel {
+    color: #ffaea9;
+    height: 100%;
+    width: auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        cursor: pointer;
+    }
+}
+
+.c-form__button {
+    color: inherit;
+    padding: 0;
+    height: 100%;
+    width: 2.5em;
+    background-color: #ff7b73;
 }
