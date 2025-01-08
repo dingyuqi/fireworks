@@ -28,7 +28,7 @@
     <div class="c-formContainer">
       <form class="c-form" action="">
         <input id="textInput" class="c-form__input" placeholder="空格可以分词"
-          pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+          pattern="^[A-Za-z\u4e00-\u9fa5\s]+$" required>
         <label class="c-form__buttonLabel" for="checkbox">
           <button class="c-form__button" type="button" id="button">发射</button>
         </label>
