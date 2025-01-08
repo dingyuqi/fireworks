@@ -69,18 +69,16 @@
     }
 }
 
-.c-checkbox:checked~#presetContainer {
+.c-checkbox:checked+.c-formContainer~#presetContainer {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease, visibility 0s 0s;
-    /* 显示并不延迟 visibility */
 }
 
-.c-checkbox:not(:checked)~#presetContainer {
+.c-checkbox:not(:checked)+.c-formContainer~#presetContainer {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
-    /* 隐藏并延迟 visibility */
 }
 
 .c-formContainer {
