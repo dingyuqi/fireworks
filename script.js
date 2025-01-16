@@ -44,13 +44,21 @@ function setupFireworks() {
         'static/explosion0.mp3',
         'static/explosion1.mp3',
         'static/explosion2.mp3'
-      ], volume: {
+      ],
+      volume: {
         min: 120,
         max: 160
       }
-    }
+    },
+    particles: 200,
+    lineWidth: {
+      explosion: {
+        min: 2,
+        max: 5
+      }
+    },
   })
-  const confirmButton =document.querySelector('label[for="checkbox"]');
+  const confirmButton = document.querySelector('label[for="checkbox"]');
 
   // 点击页面触发烟花和文字
   container.addEventListener('click', (e) => {
@@ -59,7 +67,11 @@ function setupFireworks() {
 
   // 确认按钮事件
   confirmButton.addEventListener('click', () => {
-    handleConfirmButton(container, fireworks);
+    const input = document.querySelector(".c-form__input");
+    if (input.validity.valid) {
+      handleConfirmButton(container, fireworks);
+    }
+
   });
 }
 
